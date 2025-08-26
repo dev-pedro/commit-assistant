@@ -1,15 +1,10 @@
 import { ExampleDetail } from "../types/type";
 import { FurtherDetails, lessDetailsExample } from "./example.commit";
 
-export function createPrompt(
-  diff: string,
-  exampleDeatil?: ExampleDetail
-): string {
+export function createPrompt(diff: string, exampleDeatil?: string): string {
   console.log("DIFF recebido: ", diff);
   const example =
-    exampleDeatil === ExampleDetail.FURTHER
-      ? FurtherDetails()
-      : lessDetailsExample();
+    exampleDeatil === "detailed" ? FurtherDetails() : lessDetailsExample();
 
   const basePrompt = `
 Gere apenas UMA mensagem de commit curta e objetiva (máximo 15 palavras).
