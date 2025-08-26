@@ -22,24 +22,52 @@
     "SCM Providers"
   ],
   "activationEvents": [
-    "onCommand:ai-commit-suggester.suggestCommitMessage",
+    "onCommand:commit-assistant.suggestCommitMessage",
     "onStartupFinished"
   ],
   "contributes": {
+    "configuration": {
+      "type": "object",
+      "title": "Configurações do CommitAssistant",
+      "properties": {
+        "commit-assistant.modelosLocais": {
+          "type": "string",
+          "default": "",
+          "items": {
+            "type": "string"
+          },
+          "description": "Modelos locais para gerar mensagens de commit."
+        },
+        "commit-assistant.estiloMensagem": {
+          "type": "string",
+          "default": "default",
+          "enum": [
+            "default",
+            "detailed",
+            "draft"
+          ],
+          "description": "Escolha o estilo das mensagens de commit."
+        }
+      }
+    },
     "commands": [
       {
-        "command": "ai-commit-suggester.suggestCommitMessage",
+        "command": "commit-assistant.suggestCommitMessage",
         "title": "Gerar Sugestão de Commit",
         "icon": {
           "dark": "images/icon.dark.svg",
-          "light": "images/icon.ligth.svg"
+          "light": "images/icon.light.svg"
         }
+      },
+      {
+        "command": "commit-assistant.showConfig",
+        "title": "Mostrar Configurações do CommitAssistant"
       }
     ],
     "menus": {
       "scm/title": [
         {
-          "command": "ai-commit-suggester.suggestCommitMessage",
+          "command": "commit-assistant.suggestCommitMessage",
           "group": "navigation",
           "when": "scmProvider == git"
         }
