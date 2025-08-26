@@ -1,4 +1,3 @@
-import { ExampleDetail } from "../types/type";
 import { FurtherDetails, lessDetailsExample } from "./example.commit";
 
 export function createPrompt(diff: string, exampleDeatil?: string): string {
