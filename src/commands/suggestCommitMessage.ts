@@ -2,11 +2,14 @@
 import * as vscode from "vscode";
 import { getGitApi, checkForChanges } from "../git/gitHelper";
 import { generateCommitMessage } from "../api/apiClient";
-import { ExampleDetail } from "../types/type";
 import { createPrompt } from "../functions/createPrompt";
 
 export async function suggestCommitMessage(context: vscode.ExtensionContext) {
-  const model = "llama-3.2-3b-instruct";
+  // Obter configurações atuais
+  const config = vscode.workspace.getConfiguration("commit-assistant");
+  const model = config.get<string>("modelosLocais") || "";
+  const messageStyle = config.get<string>("estiloMensagem") || "default";
+  //const model = "llama-3.2-3b-instruct";
   try {
     const gitApi = getGitApi();
     const repo = gitApi.repositories[0];
@@ -22,7 +25,7 @@ export async function suggestCommitMessage(context: vscode.ExtensionContext) {
     }
 
     const diff = await repo.diff(true);
-    const prompt = createPrompt(diff, ExampleDetail.FURTHER);
+    const prompt = createPrompt(diff, messageStyle);
 
     const suggestedMessage = await vscode.window.withProgress(
       {
