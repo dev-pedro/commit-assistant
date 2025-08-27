@@ -1,4 +1,4 @@
-export function FurtherDetails() {
+export function DetailedExample() {
   return `
     Além disso, forneça comentários detalhados para cada mudança, seguindo a estrutura abaixo:
 
@@ -42,7 +42,7 @@ export function FurtherDetails() {
     `;
 }
 
-export function lessDetailsExample() {
+export function DefaultExample() {
   return `
   Exemplos:
   - ✨feat: adiciona validação no formulário
@@ -57,5 +57,23 @@ export function lessDetailsExample() {
   - 🔒security: corrige vulnerabilidade na autenticação
   - 🎨ui: melhora layout da tela de login
   - 🗑️remove: remove código não utilizado
+  `;
+}
+
+export function DraftExample() {
+  return `
+  Exemplos:
+  - feat: adiciona validação no formulário
+  - fix: corrige bug no login
+  - style: ajuste nas cores do menu de usuário
+  - refactor: melhora legibilidade da função de cálculo
+  - docs: adiciona instruções no README
+  - test: cria testes unitários para service de autenticação
+  - chore: atualiza dependências do projeto
+  - perf: melhora desempenho da função de busca
+  - config: adiciona configuração do ESLint
+  - security: corrige vulnerabilidade na autenticação
+  - ui: melhora layout da tela de login
+  - remove: remove código não utilizado
   `;
 }
