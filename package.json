@@ -1,6 +1,7 @@
 {
   "name": "commit-assistant",
-  "displayName": "CommitAssistant",
+  "displayName": "Commit Assistant - AI Local Models",
+  "publisher": "commit-assistant",
   "description": "Gera automaticamente mensagens de commit claras e concisas para suas alterações no Git, utilizando modelos locais",
   "version": "0.0.1",
   "engines": {
@@ -18,27 +19,26 @@
     "productivity"
   ],
   "main": "dist/extension.js",
+  "l10n": "./dist/package.nls.json",
   "categories": [
     "SCM Providers"
   ],
   "activationEvents": [
-    "onCommand:commit-assistant.suggestCommitMessage",
-    "onStartupFinished"
+    "onCommand:commit-assistant.suggestCommitMessage"
   ],
   "contributes": {
     "configuration": {
       "type": "object",
-      "title": "Configurações do CommitAssistant",
+      "title": "%configuration.title%",
       "properties": {
         "commit-assistant.modelosLocais": {
           "type": "string",
           "default": "",
-          "items": {
-            "type": "string"
-          },
-          "description": "Modelos locais para gerar mensagens de commit."
+          "description": "%configuration.models.description%"
         },
-        "commit-assistant.estiloMensagem": {
+        "commit-assistant.messageStyle": {
+          "title": "%configuration.messageStyle.title%",
+          "description": "%configuration.messageStyle.description%",
           "type": "string",
           "default": "default",
           "enum": [
@@ -46,14 +46,23 @@
             "detailed",
             "draft"
           ],
-          "description": "Escolha o estilo das mensagens de commit."
+          "enumDescriptions": [
+            "%configuration.messageStyle.options.default%",
+            "%configuration.messageStyle.options.detailed%",
+            "%configuration.messageStyle.options.draft%"
+          ]
+        },
+        "commit-assistant.enableNotifications": {
+          "type": "boolean",
+          "default": true,
+          "description": "%configuration.enableNotifications.description%"
         }
       }
     },
     "commands": [
       {
         "command": "commit-assistant.suggestCommitMessage",
-        "title": "Gerar Sugestão de Commit",
+        "title": "%commands.suggestCommitMessage%",
         "icon": {
           "dark": "images/icon.dark.svg",
           "light": "images/icon.light.svg"
@@ -61,7 +70,7 @@
       },
       {
         "command": "commit-assistant.showConfig",
-        "title": "Mostrar Configurações do CommitAssistant"
+        "title": "%commands.showConfig%"
       }
     ],
     "menus": {
@@ -93,6 +102,7 @@
     "@typescript-eslint/parser": "^8.39.0",
     "@vscode/test-cli": "^0.0.11",
     "@vscode/test-electron": "^2.5.2",
+    "copy-webpack-plugin": "^13.0.1",
     "eslint": "^9.32.0",
     "ts-loader": "^9.5.2",
     "typescript": "^5.9.2",
