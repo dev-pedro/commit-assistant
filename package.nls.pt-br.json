@@ -1,0 +1,23 @@
+{
+    "configuration.title": "Configurações do Commit Assistant",
+    "configuration.models.description": "Modelo local utilizado para sugestões de commit.",
+    "configuration.messageStyle.title": "Estilo da Mensagem de Commit",
+    "configuration.messageStyle.description": "Estilo da mensagem de commit gerada.",
+    "configuration.messageStyle.options.default": "Mensagem padrão.",
+    "configuration.messageStyle.options.detailed": "Mensagem detalhada.",
+    "configuration.messageStyle.options.draft": "Rascunho da mensagem.",
+    "configuration.enableNotifications.description": "Habilitar ou desabilitar notificações.",
+    "commands.suggestCommitMessage": "Gerar sugestão de commit",
+    "commands.showConfig": "Mostrar configurações do Commit Assistant",
+    "commit.suggestion.error": "Erro ao sugerir mensagem de commit: ",
+    "not.repo.open": "Nenhum repositório Git aberto!",
+    "not.change.to.commit": "Nenhuma mudança para commitar!",
+    "git.extention.lost": "Extensão Git do VS Code não encontrada!",
+    "multi.model.info": "Commit Assistant: modelo utilizado: {0}.",
+    "commit.message.inserted": "Mensagem sugerida inserida: {0}.",
+    "lm.studio.error": "Verifique se o LM Studio está em execução.",
+    "multi.model.none.selected": "Nenhum modelo selecionado. Operação cancelada.",
+    "multi.model.saved": "Modelo selecionado e salvo: {0}",
+    "model.choose.title": "Escolha o modelo ativo para usar",
+    "multi.model.choose.placeholder": "Selecione um modelo..."
+}

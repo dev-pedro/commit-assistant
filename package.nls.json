@@ -1,0 +1,23 @@
+{
+    "configuration.title": "Commit Assistant Settings",
+    "configuration.models.description": "Local model used for commit suggestions.",
+    "configuration.messageStyle.title": "Commit Message Style",
+    "configuration.messageStyle.description": "Style of the generated commit message.",
+    "configuration.messageStyle.options.default": "Default message.",
+    "configuration.messageStyle.options.detailed": "Detailed message.",
+    "configuration.messageStyle.options.draft": "Draft message.",
+    "configuration.enableNotifications.description": "Enable or disable notifications.",
+    "commands.suggestCommitMessage": "Generate Commit Suggestion",
+    "commands.showConfig": "Show Commit Assistant Settings",
+    "commit.suggestion.error": "Error suggesting commit message: ",
+    "not.repo.open": "No open Git repository!",
+    "not.change.to.commit": "No changes to commit!",
+    "git.extention.lost": "VS Code Git extension not found!",
+    "multi.model.info": "Commit Assistant: using configured model: {0}.",
+    "commit.message.inserted": "Suggested message inserted: {0}.",
+    "lm.studio.error": "Please check if LM Studio is running.",
+    "multi.model.none.selected": "No model selected. Operation cancelled.",
+    "multi.model.saved": "Model selected and saved: {0}",
+    "model.choose.title": "Choose the active model to use",
+    "multi.model.choose.placeholder": "Select a model..."
+}
