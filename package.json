@@ -4,8 +4,20 @@
   "publisher": "commit-assistant",
   "description": "Gera automaticamente mensagens de commit claras e concisas para suas alterações no Git, utilizando modelos locais",
   "version": "0.0.1",
+  "configurations": [
+    {
+      "type": "node",
+      "request": "launch",
+      "name": "Launch Extension",
+      "program": "${workspaceFolder}/out/extension.js",
+      "outFiles": [
+        "${workspaceFolder}/out/**/*.js"
+      ],
+      "preLaunchTask": "npm: compile"
+    }
+  ],
   "engines": {
-    "vscode": "^1.103.0"
+    "vscode": "^1.100.0"
   },
   "keywords": [
     "git",
@@ -65,7 +77,7 @@
         "title": "%commands.suggestCommitMessage%",
         "icon": {
           "dark": "images/icon.dark.svg",
-          "light": "images/icon.light.svg"
+          "light": "images/icon.ligth.svg"
         }
       },
       {
@@ -81,7 +93,31 @@
           "when": "scmProvider == git"
         }
       ]
-    }
+    },
+    "locales": [
+      {
+        "languageId": "pt",
+        "languageName": "Português",
+        "localizedLanguageName": "Português",
+        "translations": [
+          {
+            "id": "configuration.title",
+            "path": "./i18n/pt/package.i18n.json"
+          }
+        ]
+      },
+      {
+        "languageId": "en",
+        "languageName": "English",
+        "localizedLanguageName": "English",
+        "translations": [
+          {
+            "id": "configuration.title",
+            "path": "./i18n/en/package.i18n.json"
+          }
+        ]
+      }
+    ]
   },
   "scripts": {
     "vscode:prepublish": "npm run package",
@@ -111,6 +147,7 @@
   },
   "dependencies": {
     "axios": "^1.11.0",
+    "vscode-nls": "^5.2.0",
     "y": "^0.3.2"
   }
 }
