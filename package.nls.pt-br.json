@@ -1,0 +1,12 @@
+{
+    "configuration.title": "Configurações do Commit Assistant",
+    "configuration.models.description": "Modelo local utilizado para sugestões de commit.",
+    "configuration.messageStyle.title": "Estilo da Mensagem de Commit",
+    "configuration.messageStyle.description": "Estilo da mensagem de commit gerada.",
+    "configuration.messageStyle.options.default": "Mensagem padrão.",
+    "configuration.messageStyle.options.detailed": "Mensagem detalhada.",
+    "configuration.messageStyle.options.draft": "Rascunho da mensagem.",
+    "configuration.enableNotifications.description": "Habilitar ou desabilitar notificações.",
+    "commands.suggestCommitMessage": "Gerar sugestão de commit",
+    "commands.showConfig": "Mostrar configurações do Commit Assistant"
+}
