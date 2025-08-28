@@ -1,12 +1,11 @@
 // src/extension.ts
 import * as vscode from 'vscode';
+import * as nls from 'vscode-nls';
 import { suggestCommitMessage } from './commands/suggestCommitMessage';
 
 export function activate(context: vscode.ExtensionContext) {
-  // Obter configurações atuais
-  const config = vscode.workspace.getConfiguration('commit-assistant');
-  const localModel = config.get<string>('modelosLocais') || '';
-  const estiloMensagem = config.get<string>('estiloMensagem') || 'default';
+  // Obter traduções
+  const localize = nls.config({ messageFormat: nls.MessageFormat.file })();
   // Comando para sugerir mensagens de commit
   const suggestCommitDisposable = vscode.commands.registerCommand(
     'commit-assistant.suggestCommitMessage',
@@ -16,7 +15,11 @@ export function activate(context: vscode.ExtensionContext) {
         await suggestCommitMessage(context);
       } catch (error: any) {
         vscode.window.showErrorMessage(
-          vscode.l10n.t('commit.suggestion.error') + error.message
+          localize(
+            'commit.suggestion.error',
+            'Error commit message: {0}',
+            error.message
+          )
         );
       }
     }
