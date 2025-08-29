@@ -1,61 +1,61 @@
 # Commit Assistant - AI Local Models
 
-Gere automaticamente mensagens de commit claras e concisas para suas alterações no Git, utilizando modelos de IA locais integrados ao VS Code.
+Automatically generate clear and concise commit messages for your Git changes using local AI models integrated with VS Code.
 
-## Funcionalidades
-- Sugestão automática de mensagens de commit com base nas alterações do repositório.
-- Suporte a múltiplos modelos locais via LM Studio.
-- Escolha do estilo da mensagem (padrão, detalhada, rascunho).
-- Notificações configuráveis para feedback rápido.
-- Interface amigável integrada ao SCM do VS Code.
+## Features
+- Automatic suggestion of commit messages based on repository changes.
+- Support for multiple local models via LM Studio.
+- Choice of message style (standard, detailed, draft).
+- Configurable notifications for quick feedback.
+- User-friendly interface integrated with VS Code's SCM.
 
-## Requisitos
-- [LM Studio](https://lmstudio.ai/) instalado e rodando localmente (porta padrão: 1234).
-- Node.js e npm instalados para desenvolvimento.
-- Git instalado e repositório aberto no VS Code.
+## Requirements
+- [LM Studio](https://lmstudio.ai/) installed and running locally (default port: 1234).
+- Node.js and npm installed for development.
+- Git installed and repository opened in VS Code.
 
-## Instalação
-1. Clone o repositório:
+## Installation
+1. Clone the repository:
    ```sh
    git clone https://github.com/dev-pedro/commit-assistant.git
    ```
-2. Instale as dependências:
+2. Install the dependencies:
    ```sh
    npm install
    ```
-3. Compile a extensão:
+3. Compile the extension:
    ```sh
    npm run compile
    ```
-4. Inicie o LM Studio e carregue o(s) modelo(s) desejado(s).
-5. Execute e teste a extensão no VS Code (F5 para modo desenvolvimento).
+4. Start LM Studio and load the desired model(s).
+5. Run and test the extension in VS Code (press F5 for development mode).
 
-## Como Usar
-- Abra o menu de SCM (controle de código-fonte) no VS Code.
-- Clique no botão "Gerar sugestão de commit" ou execute o comando `Commit Assistant: Generate Commit Suggestion`.
-- Caso haja mais de um modelo ativo, escolha o modelo desejado.
-- A mensagem sugerida será inserida automaticamente no campo de commit.
+## How to Use
+- Open the SCM (source control) menu in VS Code.
+- Click the "Generate Commit Suggestion" button or run the command `Commit Assistant: Generate Commit Suggestion`.
+- If there is more than one active model, choose the desired model.
+- The suggested message will be automatically inserted into the commit field.
 
-## Configurações
-A extensão oferece as seguintes opções em `settings.json`:
-- `CommitAssistant.localModel`: Modelo local padrão para sugestões.
-- `CommitAssistant.messageStyle`: Estilo da mensagem (`default`, `detailed`, `draft`).
-- `CommitAssistant.enableNotifications`: Ativa/desativa notificações.
-- `CommitAssistant.commitIdiom`: Idioma da mensagem (`en`, `pt`).
+## Settings
+The extension offers the following options in `settings.json`:
+- `CommitAssistant.localModel`: Default local model for suggestions.
+- `CommitAssistant.messageStyle`: Message style (`default`, `detailed`, `draft`).
+- `CommitAssistant.enableNotifications`: Enable/disable notifications.
+- `CommitAssistant.commitIdiom`: Language of the message (`en`, `pt`).
 
-## Exemplos
-- Sugestão de commit
-![Sugestão de commit](/images/message-commit.png)
-- Escolha de modelo
-![Escolha de modelo](/images/select-model.png)
+## Examples
+- Commit suggestion
+![Commit suggestion](/images/message-commit.png)
+- Model selection
+![Model selection](/images/select-model.png)
 
-## Problemas Conhecidos
-- O comando "Mostrar configurações do Commit Assistant" precisa ser implementado para funcionar corretamente.
-- Certifique-se de que o LM Studio está rodando e que há modelos carregados.
+## Known Issues
+- The command "Show Commit Assistant Settings" needs to be implemented to function correctly.
+- Ensure that LM Studio is running and models are loaded.
 
-## Notas de Lançamento
+## Release Notes
 ### 1.0.0
-- Primeira versão estável com sugestão automática de mensagens de commit.
+- First stable version with automatic commit message suggestions.
 
 ---
-Para dúvidas ou sugestões, abra uma issue no [GitHub](https://github.com/dev-pedro/commit-assistant).
+For questions or suggestions, please open an issue on [GitHub](https://github.com/dev-pedro/commit-assistant).
