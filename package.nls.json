@@ -1,5 +1,5 @@
 {
-    "extention.displayName": "Commit Assistant - AI Local Models",
+    "extention.displayName": "Commit Wizard Local",
     "extension.description": "Automatically generate clear and concise commit messages for your Git changes using local models",
     "configuration.title": "Commit Assistant Settings",
     "configuration.CommitAssistant.LocalModel.title": "Local Model",

@@ -1,5 +1,5 @@
 {
-    "extension.displayName": "Commit Assistant - Modelos de IA Locais",
+    "extension.displayName": "Commit Wizard Local",
     "extension.description": "Gera automaticamente mensagens de commit claras e concisas para suas alterações, utilizando modelos locais",
     "configuration.title": "Configurações do Commit Assistant",
     "configuration.CommitAssistant.LocalModel.title": "Modelo local",

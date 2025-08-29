@@ -1,10 +1,11 @@
 {
-  "name": "commit-assistant",
+  "name": "commit-wizard-local",
   "displayName": "%extension.displayName%",
   "description": "%extension.description%",
-  "publisher": "commit-assistant",
+  "publisher": "pedro-henrique",
+  "license": "MIT",
   "version": "1.0.0",
-   "author": "Pedro Henrique <phenrique.coder@gmail.com>",
+  "author": "Pedro Henrique <phenrique.coder@gmail.com>",
   "bugs": {
     "url": "https://github.com/dev-pedro/commit-assistant/issues"
   },
@@ -32,6 +33,14 @@
   "l10n": "./dist/package.nls.json",
   "categories": [
     "SCM Providers"
+  ],
+  "keywords": [
+    "git",
+    "commit",
+    "message",
+    "assistant",
+    "smart",
+    "conventional"
   ],
   "activationEvents": [
     "onCommand:commit-assistant.suggestCommitMessage"
