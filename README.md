@@ -1,71 +1,61 @@
-# commit-assistant README
+# Commit Assistant - AI Local Models
 
-This is the README for your extension "commit-assistant". After writing up a brief description, we recommend including the following sections.
+Gere automaticamente mensagens de commit claras e concisas para suas alterações no Git, utilizando modelos de IA locais integrados ao VS Code.
 
-## Features
+## Funcionalidades
+- Sugestão automática de mensagens de commit com base nas alterações do repositório.
+- Suporte a múltiplos modelos locais via LM Studio.
+- Escolha do estilo da mensagem (padrão, detalhada, rascunho).
+- Notificações configuráveis para feedback rápido.
+- Interface amigável integrada ao SCM do VS Code.
 
-Describe specific features of your extension including screenshots of your extension in action. Image paths are relative to this README file.
+## Requisitos
+- [LM Studio](https://lmstudio.ai/) instalado e rodando localmente (porta padrão: 1234).
+- Node.js e npm instalados para desenvolvimento.
+- Git instalado e repositório aberto no VS Code.
 
-For example if there is an image subfolder under your extension project workspace:
+## Instalação
+1. Clone o repositório:
+   ```sh
+   git clone https://github.com/dev-pedro/commit-assistant.git
+   ```
+2. Instale as dependências:
+   ```sh
+   npm install
+   ```
+3. Compile a extensão:
+   ```sh
+   npm run compile
+   ```
+4. Inicie o LM Studio e carregue o(s) modelo(s) desejado(s).
+5. Execute e teste a extensão no VS Code (F5 para modo desenvolvimento).
 
-\!\[feature X\]\(images/feature-x.png\)
+## Como Usar
+- Abra o menu de SCM (controle de código-fonte) no VS Code.
+- Clique no botão "Gerar sugestão de commit" ou execute o comando `Commit Assistant: Generate Commit Suggestion`.
+- Caso haja mais de um modelo ativo, escolha o modelo desejado.
+- A mensagem sugerida será inserida automaticamente no campo de commit.
 
-> Tip: Many popular extensions utilize animations. This is an excellent way to show off your extension! We recommend short, focused animations that are easy to follow.
+## Configurações
+A extensão oferece as seguintes opções em `settings.json`:
+- `CommitAssistant.localModel`: Modelo local padrão para sugestões.
+- `CommitAssistant.messageStyle`: Estilo da mensagem (`default`, `detailed`, `draft`).
+- `CommitAssistant.enableNotifications`: Ativa/desativa notificações.
+- `CommitAssistant.commitIdiom`: Idioma da mensagem (`en`, `pt`).
 
-## Requirements
+## Exemplos
+- Sugestão de commit
+![Sugestão de commit](/images/message-commit.png)
+- Escolha de modelo
+![Escolha de modelo](/images/select-model.png)
 
-If you have any requirements or dependencies, add a section describing those and how to install and configure them.
+## Problemas Conhecidos
+- O comando "Mostrar configurações do Commit Assistant" precisa ser implementado para funcionar corretamente.
+- Certifique-se de que o LM Studio está rodando e que há modelos carregados.
 
-## Extension Settings
-
-Include if your extension adds any VS Code settings through the `contributes.configuration` extension point.
-
-For example:
-
-This extension contributes the following settings:
-
-* `myExtension.enable`: Enable/disable this extension.
-* `myExtension.thing`: Set to `blah` to do something.
-
-## Known Issues
-
-Calling out known issues can help limit users opening duplicate issues against your extension.
-
-## Release Notes
-
-Users appreciate release notes as you update your extension.
-
+## Notas de Lançamento
 ### 1.0.0
-
-Initial release of ...
-
-### 1.0.1
-
-Fixed issue #.
-
-### 1.1.0
-
-Added features X, Y, and Z.
+- Primeira versão estável com sugestão automática de mensagens de commit.
 
 ---
-
-## Following extension guidelines
-
-Ensure that you've read through the extensions guidelines and follow the best practices for creating your extension.
-
-* [Extension Guidelines](https://code.visualstudio.com/api/references/extension-guidelines)
-
-## Working with Markdown
-
-You can author your README using Visual Studio Code. Here are some useful editor keyboard shortcuts:
-
-* Split the editor (`Cmd+\` on macOS or `Ctrl+\` on Windows and Linux).
-* Toggle preview (`Shift+Cmd+V` on macOS or `Shift+Ctrl+V` on Windows and Linux).
-* Press `Ctrl+Space` (Windows, Linux, macOS) to see a list of Markdown snippets.
-
-## For more information
-
-* [Visual Studio Code's Markdown Support](http://code.visualstudio.com/docs/languages/markdown)
-* [Markdown Syntax Reference](https://help.github.com/articles/markdown-basics/)
-
-**Enjoy!**
+Para dúvidas ou sugestões, abra uma issue no [GitHub](https://github.com/dev-pedro/commit-assistant).

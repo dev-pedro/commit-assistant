@@ -3,7 +3,16 @@
   "displayName": "%extension.displayName%",
   "description": "%extension.description%",
   "publisher": "commit-assistant",
-  "version": "0.0.1",
+  "version": "1.0.0",
+   "author": "Pedro Henrique <phenrique.coder@gmail.com>",
+  "bugs": {
+    "url": "https://github.com/dev-pedro/commit-assistant/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/dev-pedro/commit-assistant.git"
+  },
+  "homepage": "https://github.com/dev-pedro/commit-assistant",
   "configurations": [
     {
       "type": "node",
@@ -59,7 +68,7 @@
           "default": true,
           "description": "%configuration.enableNotifications.description%"
         },
-        "CommitAssistant.commitIdiom":{
+        "CommitAssistant.commitIdiom": {
           "type": "string",
           "title": "%configuration.CommitAssistant.CommitIdiom.title%",
           "description": "%configuration.CommitAssistant.CommitIdiom.description%",
