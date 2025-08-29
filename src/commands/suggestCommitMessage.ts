@@ -10,11 +10,15 @@ export async function suggestCommitMessage(context: vscode.ExtensionContext) {
   // Obter traduções
   const localize = nls.config({ messageFormat: nls.MessageFormat.file })();
   // Obter configurações atuais
-  const config = vscode.workspace.getConfiguration('commit-assistant');
-  const modeloLocal = config.get<string>('modelosLocais') || '';
-  const messageStyle = config.get<string>('messageStyle') || 'default';
+  const config = vscode.workspace.getConfiguration('CommitAssistant');
+  const modeloLocal = config.get<string>('LocalModel') || '';
+  const messageStyle =
+    config.get<string>('CommitAssistant.MessageStyle') || 'default';
   const notificacoesHabilitadas = config.get<boolean>('enableNotifications');
 
+  console.log('Modelo Local:', modeloLocal);
+  console.log('Message Style:', messageStyle);
+  console.log('Enable Notifications:', notificacoesHabilitadas);
   try {
     const gitApi = getGitApi();
     const repo = gitApi.repositories[0];
@@ -99,7 +103,7 @@ export async function suggestCommitMessage(context: vscode.ExtensionContext) {
 
         // Salvar escolha do usuário nas configurações
         await config.update(
-          'modelosLocais',
+          'LocalModel',
           modeloFinal,
           vscode.ConfigurationTarget.Global
         );
