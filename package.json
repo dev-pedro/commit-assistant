@@ -1,8 +1,8 @@
 {
   "name": "commit-assistant",
-  "displayName": "Commit Assistant - AI Local Models",
+  "displayName": "%extension.displayName%",
+  "description": "%extension.description%",
   "publisher": "commit-assistant",
-  "description": "Gera automaticamente mensagens de commit claras e concisas para suas alterações no Git, utilizando modelos locais",
   "version": "0.0.1",
   "configurations": [
     {
@@ -43,15 +43,16 @@
       "type": "object",
       "title": "%configuration.title%",
       "properties": {
-        "commit-assistant.modelosLocais": {
+        "CommitAssistant.LocalModel": {
           "type": "string",
-          "default": "",
-          "description": "%configuration.models.description%"
+          "title": "%configuration.CommitAssistant.LocalModel.tile%",
+          "description": "%configuration.CommitAssistant.LocalModel.description%",
+          "default": ""
         },
-        "commit-assistant.messageStyle": {
-          "title": "%configuration.messageStyle.title%",
-          "description": "%configuration.messageStyle.description%",
+        "CommitAssistant.MessageStyle": {
           "type": "string",
+          "title": "%configuration.CommitAssistant.MessageStyle.title%",
+          "description": "%configuration.CommitAssistant.MessageStyle.description%",
           "default": "default",
           "enum": [
             "default",
@@ -59,12 +60,12 @@
             "draft"
           ],
           "enumDescriptions": [
-            "%configuration.messageStyle.options.default%",
-            "%configuration.messageStyle.options.detailed%",
-            "%configuration.messageStyle.options.draft%"
+            "%configuration.MessageStyle.options.default%",
+            "%configuration.MessageStyle.options.detailed%",
+            "%configuration.MessageStyle.options.draft%"
           ]
         },
-        "commit-assistant.enableNotifications": {
+        "CommitAssistant.enableNotifications": {
           "type": "boolean",
           "default": true,
           "description": "%configuration.enableNotifications.description%"
@@ -102,7 +103,7 @@
         "translations": [
           {
             "id": "configuration.title",
-            "path": "./i18n/pt/package.i18n.json"
+            "path": "./l10n/pt/package.json"
           }
         ]
       },
@@ -113,7 +114,7 @@
         "translations": [
           {
             "id": "configuration.title",
-            "path": "./i18n/en/package.i18n.json"
+            "path": "./l10n/en/package.json"
           }
         ]
       }
