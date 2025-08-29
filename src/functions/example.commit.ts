@@ -1,79 +1,79 @@
 export function DetailedExample() {
   return `
-    Além disso, forneça comentários detalhados para cada mudança, seguindo a estrutura abaixo:
+    Additionally, provide detailed comments for each change, following the structure below:
 
-  Exemplos:
-  - ✨feat: adiciona validação no formulário
-        - Adiciona verificação de campos obrigatórios
-        - Implementa feedback visual para erros
-  - 🐞fix: corrige bug no login
-        - Resolve problema de autenticação em navegadores antigos
-        - Ajusta redirecionamento após login
-  - 💄style: ajuste nas cores do menu de usuário
-        - Muda a cor de fundo do menu para melhorar contraste
-        - Atualiza a paleta de cores para o tema claro
-  - ♻️refactor: melhora legibilidade da função de cálculo
-        - Renomeia variáveis para maior clareza
-        - Divide função em subfunções para modularidade
-  - 📝docs: adiciona instruções no README
-        - Atualiza a seção de instalação
-        - Adiciona exemplos de uso
-  - ✅test: cria testes unitários para service de autenticação
-        - Adiciona testes para verificar fluxo de login
-        - Implementa testes de integração para registro de usuários
-  - 📦chore: atualiza dependências do projeto
-        - Atualiza pacotes para versões mais recentes
-        - Remove pacotes não utilizados
-  - 🚀perf: melhora desempenho da função de busca
-        - Otimiza algoritmos de busca para reduzir tempo de resposta
-        - Implementa caching para resultados frequentes
-  - 🔧config: adiciona configuração do ESLint
-        - Define regras de estilo de código
-        - Configura scripts para linting automático
-  - 🔒security: corrige vulnerabilidade na autenticação
-        - Implementa proteção contra ataques de força bruta
-        - Atualiza bibliotecas de segurança
-  - 🎨ui: melhora layout da tela de login
-        - Redesenha a interface para melhor usabilidade
-        - Adiciona animações para transições
-  - 🗑️remove: remove código não utilizado
-        - Elimina funções obsoletas
-        - Limpa arquivos de configuração desnecessários
+  Examples:
+  - ✨feat: add validation to the form
+      - Add required field validation
+      - Implement visual feedback for errors
+  - 🐞fix: fix login bug
+      - resolve authentication issue in older browsers
+      - Adjust redirection after login
+  - 💄style: adjust colors in the user menu
+      - Change the background color of the menu to improve contrast
+      - Update the color palette for the light theme
+  - ♻️refactor: improve readability of the calculation function
+      - Rename variables for greater clarity
+      - Split the function into sub-functions for modularity
+  - 📝docs: add instructions to the README
+        - Update the installation section
+        - Add usage examples
+  - ✅test: create unit tests for the authentication service
+        - Add tests to verify the login flow
+        - Implement integration tests for user registration
+  - 📦chore: update project dependencies
+        - Update packages to the latest versions
+        - Remove unused packages
+  - 🚀perf: improve performance of the search function
+        - Optimize search algorithms to reduce response time
+        - Implement caching for frequent results
+  - 🔧config: add ESLint configuration
+        - Define code style rules
+        - Set up scripts for automatic linting
+  - 🔒security: fix vulnerability in authentication
+        - Implement protection against brute force attacks
+        - Update security libraries
+  - 🎨ui: improve layout of the login screen
+        - Redesign the interface for better usability
+        - Add animations for transitions
+  - 🗑️remove: remove unused code
+        - Eliminate obsolete functions
+        - Clean up unnecessary configuration files
     `;
 }
 
 export function DefaultExample() {
   return `
-  Exemplos:
-  - ✨feat: adiciona validação no formulário
-  - 🐞fix: corrige bug no login
-  - 💄style: ajuste nas cores do menu de usuário
-  - ♻️refactor: melhora legibilidade da função de cálculo
-  - 📝docs: adiciona instruções no README
-  - ✅test: cria testes unitários para service de autenticação
-  - 📦chore: atualiza dependências do projeto
-  - 🚀perf: melhora desempenho da função de busca
-  - 🔧config: adiciona configuração do ESLint
-  - 🔒security: corrige vulnerabilidade na autenticação
-  - 🎨ui: melhora layout da tela de login
-  - 🗑️remove: remove código não utilizado
+  Examples:
+  - ✨feat: add validation to the form
+  - 🐞fix: fix login bug
+  - 💄style: adjust colors in the user menu
+  - ♻️refactor: improve readability of the calculation function
+  - 📝docs: add instructions to the README
+  - ✅test: create unit tests for the authentication service
+  - 📦chore: update project dependencies
+  - 🚀perf: improve performance of the search function
+  - 🔧config: add ESLint configuration
+  - 🔒security: fix vulnerability in authentication
+  - 🎨ui: improve layout of the login screen
+  - 🗑️remove: remove unused code
   `;
 }
 
 export function DraftExample() {
   return `
-  Exemplos:
-  - feat: adiciona validação no formulário
-  - fix: corrige bug no login
-  - style: ajuste nas cores do menu de usuário
-  - refactor: melhora legibilidade da função de cálculo
-  - docs: adiciona instruções no README
-  - test: cria testes unitários para service de autenticação
-  - chore: atualiza dependências do projeto
-  - perf: melhora desempenho da função de busca
-  - config: adiciona configuração do ESLint
-  - security: corrige vulnerabilidade na autenticação
-  - ui: melhora layout da tela de login
-  - remove: remove código não utilizado
+  Examples:
+  - feat: add validation to the form
+  - fix: fix login bug
+  - style: adjust colors in the user menu
+  - refactor: improve readability of the calculation function
+  - docs: add instructions to the README
+  - test: create unit tests for the authentication service
+  - chore: update project dependencies
+  - perf: improve performance of the search function
+  - config: add ESLint configuration
+  - security: fix vulnerability in authentication
+  - ui: improve layout of the login screen
+  - remove: remove unused code
   `;
 }

@@ -19,17 +19,6 @@
   "engines": {
     "vscode": "^1.100.0"
   },
-  "keywords": [
-    "git",
-    "auto",
-    "generate",
-    "commit",
-    "message",
-    "conventional-commit",
-    "vs-code",
-    "vscode",
-    "productivity"
-  ],
   "main": "dist/extension.js",
   "l10n": "./dist/package.nls.json",
   "categories": [
@@ -43,13 +32,13 @@
       "type": "object",
       "title": "%configuration.title%",
       "properties": {
-        "CommitAssistant.LocalModel": {
+        "CommitAssistant.localModel": {
           "type": "string",
           "title": "%configuration.CommitAssistant.LocalModel.tile%",
           "description": "%configuration.CommitAssistant.LocalModel.description%",
           "default": ""
         },
-        "CommitAssistant.MessageStyle": {
+        "CommitAssistant.messageStyle": {
           "type": "string",
           "title": "%configuration.CommitAssistant.MessageStyle.title%",
           "description": "%configuration.CommitAssistant.MessageStyle.description%",
@@ -69,6 +58,20 @@
           "type": "boolean",
           "default": true,
           "description": "%configuration.enableNotifications.description%"
+        },
+        "CommitAssistant.commitIdiom":{
+          "type": "string",
+          "title": "%configuration.CommitAssistant.CommitIdiom.title%",
+          "description": "%configuration.CommitAssistant.CommitIdiom.description%",
+          "default": "en",
+          "enum": [
+            "en",
+            "pt"
+          ],
+          "enumDescriptions": [
+            "%configuration.CommitIdiom.options.en%",
+            "%configuration.CommitIdiom.options.pt%"
+          ]
         }
       }
     },

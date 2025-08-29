@@ -10,6 +10,10 @@
     "configuration.MessageStyle.options.detailed": "Detailed message",
     "configuration.MessageStyle.options.draft": "Draft message",
     "configuration.enableNotifications.description": "Enable or disable notifications",
+    "configuration.CommitAssistant.CommitIdiom.title": "Commit Message Language",
+    "configuration.CommitAssistant.CommitIdiom.description": "Language for the commit message",
+    "configuration.CommitIdiom.options.en": "English",
+    "configuration.CommitIdiom.options.pt": "Portuguese",
     "commands.suggestCommitMessage": "Generate Commit Suggestion",
     "commands.showConfig": "Show Commit Assistant Settings"
 }
