@@ -1,7 +1,7 @@
 {
     "configuration.title": "Commit Assistant Settings",
     "configuration.models.description": "Local model used for commit suggestions.",
-    "configuration.messageStyle.title": "Commit Message Style",
+    "configuration.messageStyle.title": "Message Style",
     "configuration.messageStyle.description": "Style of the generated commit message.",
     "configuration.messageStyle.options.default": "Default message.",
     "configuration.messageStyle.options.detailed": "Detailed message.",

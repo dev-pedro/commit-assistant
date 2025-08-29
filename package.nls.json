@@ -1,12 +1,15 @@
 {
+    "extention.displayName": "Commit Assistant - AI Local Models",
+    "extension.description": "Automatically generate clear and concise commit messages for your Git changes using local models",
     "configuration.title": "Commit Assistant Settings",
-    "configuration.models.description": "Local model used for commit suggestions.",
-    "configuration.messageStyle.title": "Commit Message Style",
-    "configuration.messageStyle.description": "Style of the generated commit message.",
-    "configuration.messageStyle.options.default": "Default message.",
-    "configuration.messageStyle.options.detailed": "Detailed message.",
-    "configuration.messageStyle.options.draft": "Draft message.",
-    "configuration.enableNotifications.description": "Enable or disable notifications.",
+    "configuration.CommitAssistant.LocalModel.title": "Local Model",
+    "configuration.CommitAssistant.LocalModel.description": "Local model used for commit suggestions",
+    "configuration.CommitAssistant.MessageStyle.title": "Commit Message Style",
+    "configuration.CommitAssistant.MessageStyle.description": "Style of the generated commit message",
+    "configuration.MessageStyle.options.default": "Default message",
+    "configuration.MessageStyle.options.detailed": "Detailed message",
+    "configuration.MessageStyle.options.draft": "Draft message",
+    "configuration.enableNotifications.description": "Enable or disable notifications",
     "commands.suggestCommitMessage": "Generate Commit Suggestion",
     "commands.showConfig": "Show Commit Assistant Settings"
 }
