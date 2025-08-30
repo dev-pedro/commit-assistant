@@ -1,9 +1,19 @@
-# Change Log
+# Changelog
 
-All notable changes to the "commit-assistant" extension will be documented in this file.
+## [1.0.3] - 2025-08-30
+### Doc
+- Updated changelog.
+- Updated readme.
 
-Check [Keep a Changelog](http://keepachangelog.com/) for recommendations on how to structure this file.
+---
+## [1.0.2] - 2025-08-30
+### Added
+- Support for older versions of VS Code (1.100.x).
 
-## [Unreleased]
+## [1.0.1] - 2025-08-30
+### Chore
+- Added extension logo.
 
-- Initial release
+## [1.0.0] - 2025-08-29
+### 1.0.0
+- First stable version with automatic commit message suggestions.
