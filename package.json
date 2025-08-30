@@ -9,6 +9,7 @@
   "bugs": {
     "url": "https://github.com/dev-pedro/commit-assistant/issues"
   },
+"icon": "images/logo.png",
   "repository": {
     "type": "git",
     "url": "https://github.com/dev-pedro/commit-assistant.git"
