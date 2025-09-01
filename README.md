@@ -53,9 +53,10 @@ The extension offers the following options in `settings.json`:
 - The command "Show Commit Assistant Settings" needs to be implemented to function correctly.
 - Ensure that LM Studio is running and models are loaded.
 
-## Release Notes
-### 1.0.0
-- First stable version with automatic commit message suggestions.
+## Changelog
+
+Follow the changes in each version in [CHANGELOG.md](./CHANGELOG.md).
 
 ---
 For questions or suggestions, please open an issue on [GitHub](https://github.com/dev-pedro/commit-assistant).
+
