@@ -17,7 +17,19 @@ export async function suggestCommitMessage(context: vscode.ExtensionContext) {
   const commitIdiom = config.get<'en' | 'pt'>('commitIdiom') || 'en';
   try {
     const gitApi = getGitApi();
-    const repo = gitApi.repositories[0];
+    let repo = gitApi.activeRepository;
+
+    // Verificar se o comando foi executado a partir de um clique em um arquivo
+    const activeTextEditor = vscode.window.activeTextEditor;
+    if (activeTextEditor) {
+      // Obter o caminho do arquivo ativo
+      const filePath = activeTextEditor.document.uri.fsPath;
+
+      // Encontrar o repositório correspondente ao arquivo ativo
+      repo = gitApi.repositories.find((r: any) =>
+        filePath.startsWith(r.rootUri.fsPath)
+      );
+    }
 
     if (!repo) {
       notificacoesHabilitadas &&
@@ -33,6 +45,7 @@ export async function suggestCommitMessage(context: vscode.ExtensionContext) {
         vscode.window.showInformationMessage(
           localize('not.change.to.commit', 'No changes to commit!')
         );
+      repo = gitApi.repositories[0];
       return;
     }
 

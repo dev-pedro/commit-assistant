@@ -4,7 +4,7 @@
   "description": "%extension.description%",
   "publisher": "commit-wizard-local",
   "license": "MIT",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "author": "Pedro Henrique <phenrique.coder@gmail.com>",
   "bugs": {
     "url": "https://github.com/dev-pedro/commit-assistant/issues"
