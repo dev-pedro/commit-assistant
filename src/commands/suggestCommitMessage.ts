@@ -148,18 +148,33 @@ export async function suggestCommitMessage(context: vscode.ExtensionContext) {
       modelosAtivos[0],
       prompt
     );
-    repo.inputBox.value = suggestedMessage;
-    await vscode.commands.executeCommand('workbench.scm.focus');
-    vscode.window.showInformationMessage(
-      localize(
-        'commit.message.inserted',
-        'Commit Assistant: Message inserted',
-        suggestedMessage
-      )
-    );
-  } catch (error) {
+
+    if (suggestedMessage === 'Try commit a small change.') {
+      vscode.window.showErrorMessage(
+        localize(
+          'lm.studio.error.message.size',
+          'Error to generate a commit message: Try commit a small change.'
+        )
+      );
+      return;
+    } else {
+      repo.inputBox.value = suggestedMessage;
+      await vscode.commands.executeCommand('workbench.scm.focus');
+      vscode.window.showInformationMessage(
+        localize(
+          'commit.message.inserted',
+          'Commit Assistant: Message inserted',
+          suggestedMessage
+        )
+      );
+    }
+  } catch (error: any) {
     vscode.window.showErrorMessage(
-      localize('lm.studio.error', 'Please check if LM Studio is running.')
+      localize(
+        'lm.studio.error',
+        'Please check if LM Studio is running {0}.',
+        error
+      )
     );
   }
 }
@@ -174,15 +189,21 @@ async function verificarModelosAtivos(): Promise<string[]> {
 async function obterModelosAtivosDoLMstudio(): Promise<string[]> {
   try {
     const response = await axios.get('http://localhost:1234/v1/models');
-
-    // Extrair os IDs dos modelos da resposta
-    const modelosAtivos = response.data.data.map(
-      (modelo: { id: string }) => modelo.id
+    // Verifica se a resposta está no formato esperado
+    if (response.data && response.data.data) {
+      const modelosAtivos = response.data.data.map(
+        (modelo: { id: string }) => modelo.id
+      );
+      return modelosAtivos;
+    } else {
+      console.error('Formato de resposta inesperado:', response.data);
+      return []; // Retorna um array vazio em caso de erro
+    }
+  } catch (error: any) {
+    console.error(
+      'Erro ao obter modelos ativos:',
+      error.response?.data || error.message
     );
-
-    return modelosAtivos;
-  } catch (error) {
-    console.error('Erro ao obter modelos ativos:', error);
     return []; // Retorna um array vazio em caso de erro
   }
 }
