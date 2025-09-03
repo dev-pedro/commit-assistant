@@ -1,10 +1,18 @@
 # Changelog
 
-## [1.0.4] - 2025-09-01
-### Added
-- Automatically detect the active repository based on the current file
+## [1.0.6] - 2025-09-03
+
+- Fixed issue when generating commit messages with very large diffs (diff size is now limited to prevent errors).
+- Improved error handling for local model integration via LM Studio.
+- Enhanced automatic repository and active file selection.
+- Better user experience for model selection and notifications.
+- Updated dependencies and minor stability improvements.
 
 ---
+### [1.0.5] - 2025-09-01
+#### Added
+- Automatically detect the active repository based on the current file
+
 ### [1.0.3] - 2025-08-30
 #### Doc
 - Updated changelog.
