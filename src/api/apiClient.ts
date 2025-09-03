@@ -12,7 +12,7 @@ export async function generateCommitMessage(
         {
           role: 'system',
           content:
-            'Você é um assistente que gera mensagens de commit claras e objetivas.',
+            'You are a wizard who generates clear and straightforward commit messages.',
         },
         { role: 'user', content: prompt },
       ],
