@@ -1,13 +1,12 @@
 // src/api/apiClient.ts
-import axios from 'axios';
+import apiClient from './axiosConfig'; // Importe a instância do Axios
 
 export async function generateCommitMessage(
   model: string,
   prompt: string
 ): Promise<string> {
-  const response = await axios.post(
-    'http://127.0.0.1:1234/v1/chat/completions',
-    {
+  try {
+    const response = await apiClient.post('/chat/completions', { // Use a instância configurada
       model: model,
       messages: [
         {
@@ -17,15 +16,17 @@ export async function generateCommitMessage(
         },
         { role: 'user', content: prompt },
       ],
-      max_tokens: 1000,
+      max_tokens: 4096,
       temperature: 0.4,
+    });
+
+    let message = 'Default Commit message.';
+    if (response.data.choices && response.data.choices.length > 0) {
+      message = response.data.choices[0].message?.content || message;
     }
-  );
 
-  let message = 'Mensagem de commit padrão';
-  if (response.data.choices && response.data.choices.length > 0) {
-    message = response.data.choices[0].message?.content || message;
+    return message;
+  } catch (error) {
+    return 'Try commit a small change.';
   }
-
-  return message;
 }
