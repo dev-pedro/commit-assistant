@@ -4,7 +4,7 @@ import * as nls from 'vscode-nls';
 import { getGitApi, checkForChanges } from '../git/gitHelper';
 import { generateCommitMessage } from '../api/apiClient';
 import { createPrompt } from '../functions/createPrompt';
-import axios from 'axios';
+import { obterModelosAtivosDoLMstudio } from '../functions/get.atctive.models';
 
 export async function suggestCommitMessage(context: vscode.ExtensionContext) {
   // Obter traduções
@@ -53,7 +53,7 @@ export async function suggestCommitMessage(context: vscode.ExtensionContext) {
     const prompt = createPrompt(diff, messageStyle, commitIdiom);
 
     // Verificar modelos ativos
-    const modelosAtivos = await verificarModelosAtivos();
+    const modelosAtivos = await obterModelosAtivosDoLMstudio();
 
     if (modelosAtivos.length > 1) {
       if (modelosAtivos.includes(modeloLocal)) {
@@ -176,34 +176,5 @@ export async function suggestCommitMessage(context: vscode.ExtensionContext) {
         error
       )
     );
-  }
-}
-
-// Função para verificar quais modelos estão ativos
-async function verificarModelosAtivos(): Promise<string[]> {
-  const modelosAtivos = await obterModelosAtivosDoLMstudio();
-  return modelosAtivos;
-}
-
-// Função para obter modelos ativos do LM Studio
-async function obterModelosAtivosDoLMstudio(): Promise<string[]> {
-  try {
-    const response = await axios.get('http://localhost:1234/v1/models');
-    // Verifica se a resposta está no formato esperado
-    if (response.data && response.data.data) {
-      const modelosAtivos = response.data.data.map(
-        (modelo: { id: string }) => modelo.id
-      );
-      return modelosAtivos;
-    } else {
-      console.error('Formato de resposta inesperado:', response.data);
-      return []; // Retorna um array vazio em caso de erro
-    }
-  } catch (error: any) {
-    console.error(
-      'Erro ao obter modelos ativos:',
-      error.response?.data || error.message
-    );
-    return []; // Retorna um array vazio em caso de erro
   }
 }
