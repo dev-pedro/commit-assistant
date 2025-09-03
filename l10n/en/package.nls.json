@@ -13,6 +13,7 @@
     "not.change.to.commit": "No changes to commit!",
     "git.extention.lost": "VS Code Git extension not found!",
     "lm.studio.error": "Please check if LM Studio is running.",
+    "lm.studio.error.message.size": "Commit Assistant: Error to generate a commit message: Try commit a small change.",
     "multi.model.none.selected": "No model selected. Operation cancelled.",
     "model.choose.title": "Choose the active model to use",
     "multi.model.choose.placeholder": "Select a model...",
