@@ -1,8 +1,12 @@
 # Changelog
+## [1.0.8] - 2025-10-01
+#### Added
+- Automatic summary of large diffs: Now, when generating commit messages, if the diff is too large, it is automatically summarized (changed files, added/removed lines, and relevant snippets), avoiding template overload and maintaining the sense of the commit.
+
+---
 ## [1.0.7] - 2025-09-03
 - Changelog updated
 
----
 ## [1.0.6] - 2025-09-03
 
 - Fixed issue when generating commit messages with very large diffs (diff size is now limited to prevent errors).
