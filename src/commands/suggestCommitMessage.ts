@@ -5,6 +5,7 @@ import { getGitApi, checkForChanges } from '../git/gitHelper';
 import { generateCommitMessage } from '../api/apiClient';
 import { createPrompt } from '../functions/createPrompt';
 import { obterModelosAtivosDoLMstudio } from '../functions/get.atctive.models';
+import { summarizeDiff } from '../functions/summarizeDiff';
 
 export async function suggestCommitMessage(context: vscode.ExtensionContext) {
   // Obter traduções
@@ -50,7 +51,11 @@ export async function suggestCommitMessage(context: vscode.ExtensionContext) {
     }
 
     const diff = await repo.diff(true);
-    const prompt = createPrompt(diff, messageStyle, commitIdiom);
+    // Se o diff for muito grande, gera um resumo
+    console.log(`Diff length: ${diff.split('\n').length} lines`);
+    console.log(`Message style: `, messageStyle);
+    const diffToUse = diff && diff.split('\n').length > 200 ? summarizeDiff(diff, 200) : diff;
+    const prompt = createPrompt(diffToUse, messageStyle, commitIdiom);
 
     // Verificar modelos ativos
     const modelosAtivos = await obterModelosAtivosDoLMstudio();
