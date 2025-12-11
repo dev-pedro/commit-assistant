@@ -57,8 +57,8 @@
           "description": "%configuration.CommitAssistant.ApiProvider.description%",
           "default": "Google",
           "enum": [
-            "LM Studio",
-            "Google"
+            "Google",
+            "LM Studio"
           ]
         },
         "CommitAssistant.apiKey": {
@@ -72,10 +72,10 @@
           "type": "string",
           "title": "%configuration.CommitAssistant.googleModel.title%",
           "description": "%configuration.CommitAssistant.googleModel.description%",
-          "default": "gemini-1.5-flash-latest",
+          "default": "",
           "enum": [
-            "gemini-1.5-flash-latest",
-            "gemini-1.5-pro-latest"
+            "gemini-2.5-flash",
+            "gemini-2.5-pro"
           ],
           "scope": "window"
         },

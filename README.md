@@ -1,16 +1,19 @@
-# Commit Assistant - AI Local Models
+# Commit Wizard Pro
 
-Automatically generate clear and concise commit messages for your Git changes using local AI models integrated with VS Code.
+Automatically generate clear and concise commit messages for your Git changes using local or cloud-based AI models integrated with VS Code.
 
 ## Features
 - Automatic suggestion of commit messages based on repository changes.
-- Support for multiple local models via LM Studio.
-- Choice of message style (standard, detailed, draft).
+- Support for both local models via LM Studio and cloud-based models via Google AI (Gemini).
+- Dynamic selection of available models.
+- Choice of message style (`default`, `detailed`, `draft`).
 - Configurable notifications for quick feedback.
+- Support for commit messages in multiple languages (`en`, `pt`).
 - User-friendly interface integrated with VS Code's SCM.
 
 ## Requirements
-- [LM Studio](https://lmstudio.ai/) installed and running locally (default port: 1234).
+- For local models: LM Studio installed and running.
+- For cloud models: A Google AI API Key for Gemini models.
 - Node.js and npm installed for development.
 - Git installed and repository opened in VS Code.
 
@@ -33,15 +36,18 @@ Automatically generate clear and concise commit messages for your Git changes us
 ## How to Use
 - Open the SCM (source control) menu in VS Code.
 - Click the "Generate Commit Suggestion" button or run the command `Commit Assistant: Generate Commit Suggestion`.
-- If there is more than one active model, choose the desired model.
+- If you have multiple models configured, you may be prompted to choose one.
 - The suggested message will be automatically inserted into the commit field.
 
 ## Settings
 The extension offers the following options in `settings.json`:
-- `CommitAssistant.localModel`: Default local model for suggestions.
-- `CommitAssistant.messageStyle`: Message style (`default`, `detailed`, `draft`).
+- `CommitAssistant.ApiProvider`: API provider to use (`LM Studio` or `Google`).
+- `CommitAssistant.ApiKey`: Your Google API Key for Gemini.
+- `CommitAssistant.googleModel`: The Google model for generating commit messages.
+- `CommitAssistant.LocalModel`: The local model used for commit suggestions via LM Studio.
+- `CommitAssistant.MessageStyle`: Message style (`default`, `detailed`, `draft`).
 - `CommitAssistant.enableNotifications`: Enable/disable notifications.
-- `CommitAssistant.commitIdiom`: Language of the message (`en`, `pt`).
+- `CommitAssistant.CommitIdiom`: Language for the commit message (`en`, `pt`).
 
 ## Examples
 - Commit suggestion
@@ -59,4 +65,3 @@ Follow the changes in each version in [CHANGELOG.md](./CHANGELOG.md).
 
 ---
 For questions or suggestions, please open an issue on [GitHub](https://github.com/dev-pedro/commit-assistant).
-
